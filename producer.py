@@ -1,7 +1,8 @@
 import rabbitpy
+from const import *
 
 def producer():
-  connection = rabbitpy.Connection() # Connect to RabbitMQ server
+  connection = rabbitpy.Connection('amqp://guest:guest@' + RABBITMQ_ADDR + ':5672/%2f') # Connect to RabbitMQ server
   channel = connection.channel()     # Create new channel on the connection
 
   exchange = rabbitpy.Exchange(channel, 'exchange') # Create an exchange
