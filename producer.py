@@ -20,3 +20,6 @@ def producer():
   message = rabbitpy.Message(channel, 'Test message')
   message.publish(exchange, 'example-key') # Publish the message using the key
   exchange.delete() 
+
+if __name__ == "__main__":
+  producer()
