@@ -20,3 +20,6 @@ def consumer():
     message = queue.get()
     print('Message Q2: %s' % message.body.decode())
     message.ack()
+
+if __name__ == "__main__":
+  consumer()
