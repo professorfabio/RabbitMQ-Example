@@ -1,7 +1,7 @@
 import rabbitpy
 from const import *
 
-with rabbitpy.Connection('amqp://myuser:abc123@'+ RABBITMQ_ADDR + ':5672/%2f') as conn:
+with rabbitpy.Connection('amqp://myuser:abc123@'+ RABBITMQ_ADDR + ':5672/my_vhost') as conn:
     with conn.channel() as channel:
         exchange = rabbitpy.Exchange(channel, 'my-exchange')
         exchange.declare()
