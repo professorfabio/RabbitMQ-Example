@@ -7,7 +7,7 @@ with rabbitpy.Connection('amqp://myuser:abc123@'+ RABBITMQ_ADDR + ':5672/my_vhos
         exchange.declare()
 
         queue = rabbitpy.Queue(channel, 'my-queue', exclusive=True)
-        queue.declare()
+        queue.declare(auto_delete=False)
         queue.bind(exchange, 'my-routing-key')
 
         message = rabbitpy.Message(channel, 'Hello, world!')
