@@ -1,4 +1,5 @@
 import rabbitpy
+from const import *
 
 def consumer():
   connection = rabbitpy.Connection('amqp://guest:guest@' + RABBITMQ_ADDR + ':5672/%2f')
