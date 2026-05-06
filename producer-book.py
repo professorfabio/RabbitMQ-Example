@@ -14,11 +14,11 @@ def producer():
   queue2 = rabbitpy.Queue(channel, 'example2', durable=True, auto_delete=False) # Create 2nd queue
   queue2.declare()
 
-  queue1.bind(exchange, 'example-key') # Bind queue1 to a single key
-  queue2.bind(exchange, 'example-key') # Bind queue2 to the same key
+  queue1.bind(exchange, 'example-key1') # Bind queue1 to a single key
+  queue2.bind(exchange, 'example-key2') # Bind queue2 to the same key
 
   message = rabbitpy.Message(channel, 'Test message')
-  message.publish(exchange, 'example-key') # Publish the message using the key
+  message.publish(exchange, 'example-key1') # Publish the message using the key
   exchange.delete() 
 
 if __name__ == "__main__":
