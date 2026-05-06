@@ -9,8 +9,13 @@ Example based on Tanenbaum &amp; van Steen (2025)
 ```
 
 ## Install the RabbitMQ broker on a server machine:
-You may use the provided script for installation (install_rabbitmq.sh) -- run it with sudo
-See details on: https://www.rabbitmq.com/docs/install-debian#apt-quick-start
+You may use the provided script for installation (install_rabbitmq.sh)
+```
+sudo install_rabbitmq.sh
+```
+*Note:* Make sure the file is executable (chmod 770 install_rabbitmq.sh)
+
+See installation and configuration details on: https://www.rabbitmq.com/docs/install-debian#apt-quick-start (although the defaults should work just fine for our purposes).
 
 ### Once installed, put the broker to run:
 ```
