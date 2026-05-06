@@ -29,8 +29,9 @@ sudo rabbitmqctl add_vhost my_vhost
 sudo rabbitmqctl set_permissions -p my_vhost myuser ".*" ".*" ".*"
 ```
 
-## Install the RabbitMQ python client on the machines where producers and consumers will run:
+## Finally, install the RabbitMQ python client on the machines where producers and consumers will run:
 ```
 pip install rabbitpy
 ```
 
+*Note:* Make sure the IP address of the RabbitMQ server is correctly set in const.py
