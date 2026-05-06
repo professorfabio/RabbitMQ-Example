@@ -1,7 +1,7 @@
 import rabbitpy
 
 def consumer():
-  connection = rabbitpy.Connection()
+  connection = rabbitpy.Connection('amqp://guest:guest@' + RABBITMQ_ADDR + ':5672/%2f')
   channel = connection.channel()
 
   queue = rabbitpy.Queue(channel, 'example1')
